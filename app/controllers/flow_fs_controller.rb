@@ -1,0 +1,2 @@
+class FlowFsController < ApplicationController
+end
