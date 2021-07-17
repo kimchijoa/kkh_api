@@ -21,6 +21,18 @@
           @a = Book.where(id: params[:id])
           @a.as_json
         end
+
+        desc 'create a new book'
+        params do
+          requires :isbn, type: Integer
+          requires :title, type: String
+          requires :stock, type: Integer
+        end
+        post do
+          @a = Book.create!({ isbn:params[:isbn], title:params[:title], stock:params[:stock]})
+          @a.as_json
+
+        end
       end
     end
   end
