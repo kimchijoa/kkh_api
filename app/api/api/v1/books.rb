@@ -31,7 +31,6 @@
         post do
           @a = Book.create!({ isbn:params[:isbn], title:params[:title], stock:params[:stock]})
           @a.as_json
-
         end
       end
     end
