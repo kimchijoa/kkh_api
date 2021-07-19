@@ -11,13 +11,13 @@
           
         end
 
-        desc "Return a graduate"
+        desc "Return a graduate" 
         params do
           requires :id, type: String, desc: "ID of the 
             graduate"
         end
 
-        get ":id", root: "graduate" do
+        get ":s_id" do
           @a = Book.where(id: params[:id])
           @a.as_json
         end

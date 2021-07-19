@@ -9,18 +9,29 @@
 </div>
 
 <script>
+    console.log("Wating for Access...");
     $.ajax({ 
-        mode: "cors",
-        url: "https://kkhapi.herokuapp.com/books/", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소 \
-        data: {  }, //HTTP 요청과 함께 서버로 보낼 데이터 
+        url: "http://localhost:3000/books/s_id", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+        data: { id:1 }, //HTTP 요청과 함께 서버로 보낼 데이터 
         method: "GET", // HTTP 요청 메소드(GET, POST 등) 
         dataType: "json" // 서버에서 보내줄 데이터의 타입 
+       
     })
-        
+    //$.ajax({ 
+    //    url: "https://kkhapi.herokuapp.com/books/", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+    //    url: "https://kkhapi.herokuapp.com/books/", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+    //    data: { isbn:123123, title:"test", stock:123123 }, //HTTP 요청과 함께 서버로 보낼 데이터 
+    //    method: "POST", // HTTP 요청 메소드(GET, POST 등) 
+    //    dataType: "json" // 서버에서 보내줄 데이터의 타입 
+    //    
+    //})
+
+    
     // HTTP 요청이 성공하면 요청한 데이터가 done() 메소드로 전달됨. 
     .done(function(json) {
         console.log("Good");
-        console.log(json.data);
+        console.log(json);
+        console.log(json.id);
     })
     .fail(function(xhr, status, errorThrown) { 
             $("#text").html("오류가 발생했다.<br>")

@@ -11,15 +11,6 @@ module VideoProjectRestApi
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    #add for grape gem
-    # config.paths.add File.join(‘app’, ‘api’), glob: File.join(‘**’, ‘*.rb’)
-    # config.autoload_paths += Dir[Rails.root.join(‘app’, ‘api’, ‘*’)]
-
-    #API
-    # config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    # config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
-    # config.paths.add "app/api/api", glob: "**/*.rb"
-    # config.autoload_paths += Dir["#{Rails.root}/app/api/api/*"]
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
 
