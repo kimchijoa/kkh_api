@@ -65,8 +65,9 @@ function send_API_Get(){
 //===============================================================
 function send_API_Delete(){
     console.log("Wating for Access...");
-    var get_id = document.getElementById('get_book_id2').value;
+    var get_id = document.getElementById('d_book_id').value;
     $.ajax({ 
+        // url: "https://kkhapi.herokuapp.com/books/d_book", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
         url: "https://kkhapi.herokuapp.com/books/d_book", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
         data: { id: get_id }, //HTTP 요청과 함께 서버로 보낼 데이터 
         method: "DELETE", // HTTP 요청 메소드(GET, POST 등) 
