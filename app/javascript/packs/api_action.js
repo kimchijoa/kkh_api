@@ -7,7 +7,7 @@ window.test_js = function(){
 function send_API_Get_all(){
     console.log("Wating for Access...");
     $.ajax({ 
-        url: "http://localhost:3000/books", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+        url: "https://kkhapi.herokuapp.com/books", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
         data: {  }, //HTTP 요청과 함께 서버로 보낼 데이터 
         method: "GET", // HTTP 요청 메소드(GET, POST 등) 
         dataType: "json" // 서버에서 보내줄 데이터의 타입 
@@ -38,7 +38,7 @@ function send_API_Get(){
     console.log("Wating for Access...");
     var get_id = document.getElementById('get_book_id').value;
     $.ajax({ 
-        url: "http://localhost:3000/books/s_id", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+        url: "https://kkhapi.herokuapp.com/books/s_id", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
         data: { id: get_id }, //HTTP 요청과 함께 서버로 보낼 데이터 
         method: "GET", // HTTP 요청 메소드(GET, POST 등) 
         dataType: "json" // 서버에서 보내줄 데이터의 타입 
