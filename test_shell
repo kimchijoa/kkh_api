@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 /home/kh/video_project_rest_api/lib/assets/python3/cvlib_face_casecade.py
