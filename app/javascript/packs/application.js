@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 //custom
 require("packs/api_action")
-
+require("packs/about_loading")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

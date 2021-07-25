@@ -10,9 +10,11 @@ look this? <%= @test%>
     <input type="text", value="test" id="d_book_id">
     <input type="button", value="delete", id="delete_btn">
     |
-
     <%= form_with(model:@get_book, id: "get_book_data, local:false") do |form| %>
-
         <%= form.submit "Send" %>
     <% end %>
+
+    <!-- <input type="button", value="Go", id="make_v"> -->
+    <%= link_to "Go" , book_create_ratio_video_path(), id: "make_v", remote: true %>
 </div>
+

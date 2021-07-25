@@ -26,6 +26,8 @@ gem 'grape-entity'
 gem 'grape_on_rails_routes'
 
 gem 'rack-cors'
+
+gem 'rubypython'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
