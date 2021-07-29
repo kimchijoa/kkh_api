@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     end
 
     def get_book_data
-
+        @book = Book.new()
         #페이지 접속시 바로 실행되는 쉘 스크립트임
         #Thread 작업으로 shell script - python script 처리
 
