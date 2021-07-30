@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   root "books#index"
   get "/book/get_book_data", to: "books#get_book_data"
   get "/book/create_ratio_video", to: "books#create_ratio_video"
+
   mount V1::Books => '/'
+  mount V1::Logins => '/'
 end

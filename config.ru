@@ -10,4 +10,5 @@ use Rack::Cors do
 end
 
 run V1::Books
+run V1::Logins
 run Rails.application
