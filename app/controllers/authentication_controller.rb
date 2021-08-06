@@ -5,12 +5,6 @@ class AuthenticationController < ApplicationController
       ## body로 부터 받은 json 형식의 params를 parsing
       json_params = JSON.parse(request.body.read) 
       user = User.find_for_database_authentication(email: json_params["auth"]["email"])
-      user = User.find_for_database_authentication(email: json_params["auth"]["email"])
-      user2 = User.find_for_database_authentication(email: "admin01@naver.com")
-      
-      puts user2.to_json
-      puts json_params["auth"]["email"]
-      puts json_params["auth"]["password"]
 
       if user.valid_password?(json_params["auth"]["password"])
         render json: payload(user)
