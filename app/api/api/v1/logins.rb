@@ -65,9 +65,7 @@ module V1
               @token = JWT.encode({ user_id: @login_result.id, exp: 30.days.from_now.to_i }, ENV["SECRET_KEY_BASE"])	
               @tree = { :"JWT token" => @token, :userInfo => {id: @login_result.id, email: @login_result.email} }
               puts "JWT토큰이 생성되었습니다.#{@token}"
-              request.headers.each |key, value|
-                key
-              end
+
               request['authorization'] = "Token token=#{@token}"
               return @token
             else
