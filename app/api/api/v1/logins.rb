@@ -66,7 +66,8 @@ module V1
               @tree = { :"JWT token" => @token, :userInfo => {id: @login_result.id, email: @login_result.email} }
               puts "JWT토큰이 생성되었습니다.#{@token}"
               #request.headers['HTTP_AUTHORIZATION'] = "JWT #{@token}"
-              response.headers['HTTP_AUTHORIZATION'] = "JWT #{@token}"
+              #response header의 경우 메소드가 없다고 실행되지 않음..ㅎㅎㅎㅎㅎ 씨발년
+              return @token
               #return @token
             else
               status 400
