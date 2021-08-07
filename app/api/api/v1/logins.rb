@@ -65,8 +65,8 @@ module V1
               @token = JWT.encode({ user_id: @login_result.id, exp: 30.days.from_now.to_i }, ENV["SECRET_KEY_BASE"])	
               @tree = { :"JWT token" => @token, :userInfo => {id: @login_result.id, email: @login_result.email} }
               puts "JWT토큰이 생성되었습니다.#{@token}"
-              headers: { "HTTP_AUTHORIZATION" => "Token token=#{@token}" }
-              return @token
+              request.headers['HTTP_AUTHORIZATION'] = "JWT #{@token}" 
+              #return @token
             else
               status 400
               puts "비밀번호가 일치하지 않습니다."
