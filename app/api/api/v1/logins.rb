@@ -1,8 +1,6 @@
 module V1
     class Logins < Grape::API
 
-      use ActionDispatch::Session::CookieStore, key: '_login_session'
-
       resource :logins do
 
         desc "Return all User"
@@ -65,10 +63,8 @@ module V1
               @token = JWT.encode({ user_id: @login_result.id, exp: 30.days.from_now.to_i }, ENV["SECRET_KEY_BASE"])	
               @tree = { :"JWT token" => @token, :userInfo => {id: @login_result.id, email: @login_result.email} }
               puts "JWT토큰이 생성되었습니다.#{@token}"
-              
               # response header의 Authorization 값을 토큰값으로 변경한다.
               header['Authorization'] = "#{@token}"
-              # return @token
               #return @token
             else
               status 400
