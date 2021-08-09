@@ -68,7 +68,7 @@ module V1
               
               # response header의 Authorization 값을 토큰값으로 변경한다.
               header['Authorization'] = "#{@token}"
-              return @token
+              # return @token
               #return @token
             else
               status 400
