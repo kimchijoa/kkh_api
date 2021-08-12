@@ -100,10 +100,11 @@ module V1
 
           ## Token 안에 있는 user_id 값을 받아와서 User 모델의 유저 정보 탐색
           @current_user = User.find(auth_token[:user_id])
+          return "인증 완료되었습니다. #{@current_user.email} 회원님."
+
           rescue JWT::VerificationError, JWT::DecodeError
             puts "유저정보 탐색 실패"
-
-          puts "You Want this rs?? : #{params[:key]}"
+ 
         end
           
 
