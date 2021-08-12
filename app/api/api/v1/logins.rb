@@ -81,7 +81,7 @@ module V1
         end
 
         get "access_auth" do
-          puts "hi"
+          puts "You Want this rs?? : #{params[:key]}"
         end
           
 
