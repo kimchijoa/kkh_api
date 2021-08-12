@@ -73,6 +73,16 @@ module V1
           end
         
         end
+
+        desc "Login auth check"
+
+        params do
+            requires :key, type: String
+        end
+
+        get "access_auth" do
+          return hi
+        end
           
 
       end
