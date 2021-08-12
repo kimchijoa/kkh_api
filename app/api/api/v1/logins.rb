@@ -81,7 +81,7 @@ module V1
         end
 
         get "access_auth" do
-          return hi
+          puts "hi"
         end
           
 
