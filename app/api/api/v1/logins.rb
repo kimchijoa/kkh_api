@@ -76,16 +76,11 @@ module V1
 
         desc "Login auth check"
 
-        params do
-            requires :key, type: String
-        end
-
         get "access_auth" do
-          re_token = params[:key]
-          puts "전달받은 토큰 : #{re_token}"
+          puts "전달받은 토큰 : #{request.headers['Authorization']}"
           #토큰 검증과정
-          if re_token.present?
-            http_token =  re_token.split(' ').last
+          if  request.headers['Authorization'].present?
+            http_token =   request.headers['Authorization'].split(' ').last
           end
 
           ## 토큰 해석 : 토큰 해석은 lib/json_web_token.rb 내의 decode 메소드에서 진행됩니다.
