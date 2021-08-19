@@ -82,12 +82,13 @@ module V1
           if  request.headers['Authorization'].present?
             http_token =   request.headers['Authorization'].split(' ').last
           end
-
+          puts "1차 가공 : #{http_token}"
           ## 토큰 해석 : 토큰 해석은 lib/json_web_token.rb 내의 decode 메소드에서 진행됩니다.
           auth_token ||= JsonWebToken.decode(http_token)
 
           ## 토큰 해석 후, Decode 내용 중 User id 정보 확인
           user_id_in_token =  http_token && auth_token && auth_token[:user_id].to_i
+          puts "결과물 : #{user_id_in_token}"
 
           unless user_id_in_token
             puts "인증실패"
